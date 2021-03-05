@@ -87,28 +87,28 @@ d3.json(tectonicUrl, function(tectonicData) {
 // Grabbing geoJSON data
 d3.json(earthquakeUrl, function (data) {
   var earthquakes = data.features;
-  //console.log(earthquakes);
+
 
   //Changing color based on 3rd coordinate 
 
   function getColor(depth) {
       if (depth >= -10 && depth < 10) {
-          return "#4dff4d";
+          return "#00cc00";
       }
       else if (depth >= 10 && depth < 30) {
-        return "#ffff66";
+        return "#cccc00";
       }
       else if (depth >= 30 && depth < 50) {
-        return "#ffc299";
+        return "#ffcc00";
       }
       else if (depth >= 50 && depth < 70) {
-        return "#ff8533";
+        return "#ff9900";
       }
       else if (depth >= 70 && depth < 90) {
-        return "#e65c00";
+        return "#ff6600";
       }
       else if (depth >= 90) {
-        return "#ff0000";
+        return "#ff3300";
       }
     };
 
@@ -143,12 +143,12 @@ d3.json(earthquakeUrl, function (data) {
   legend.onAdd = function (color) {
       var div = L.DomUtil.create('div', 'info legend');
       var depth = ['-10-10', '10-30', '30-50', '50-70', '70-90', '90+'];
-      var colors = ['#4dff4d', '#ffff66', '#ffc299', '#ff8533', '#e65c00', '#ff0000']
+      var colors = ['#00cc00', '#cccc00', '#ffcc00', '#ff9900', '#ff6600', '#ff3300']
       for (var i = 0; i < depth.length; i++) {
-          div.innerHTML += '<li style="background:' + colors[i] + '"></li>' + depth[i] + '<br>';
+          div.innerHTML += '<i style="background:' + colors[i] + '"></i>' + depth[i] + '<br>';
       }
       return div;
-  }; 
+  };
 
   legend.addTo(myMap);
 });
