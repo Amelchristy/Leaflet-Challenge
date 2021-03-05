@@ -76,7 +76,7 @@ var legend = L.control({ position: 'bottomright'
         var depth = ['-10-10', '10-30', '30-50', '50-70', '70-90', '90+'];
         var colors = ['#00cc00', '#cccc00', '#ffcc00', '#ff9900', '#ff6600', '#ff3300']
         for (var i = 0; i < depth.length; i++) {
-            div.innerHTML += '<li style="background:' + colors[i] + '"></li>' + depth[i] + '<br>';
+            div.innerHTML += '<i style="background:' + colors[i] + '"></i>' + depth[i] + '<br>';
         }
         return div;
     }; 
