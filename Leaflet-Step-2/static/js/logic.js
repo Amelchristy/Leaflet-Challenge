@@ -61,10 +61,10 @@ L.control.layers(baseMaps, overlayMaps, {
 var tectonicUrl = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json";
 var earthquakeUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
-// Grabbing tectonic data
+// Tectonic data
 d3.json(tectonicUrl, function(tectonicData) {
 
-	// Grab the features of tectonic data
+	
 	var tectonic = tectonicData.features;
 
 	for (var i = 0; i < tectonic.length; i++) {
@@ -77,7 +77,7 @@ d3.json(tectonicUrl, function(tectonicData) {
 		);
 
 		// Tectonic lines
-		var lines = L.polyline(coordinateList, {color: "rgb(255, 165, 0)"});
+		var lines = L.polyline(coordinateList, {color: "rgb(159, 29, 53)"});
 		
 		// Tectonic mark
 		lines.addTo(layers.tectonicLayer);
