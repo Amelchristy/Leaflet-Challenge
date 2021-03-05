@@ -14,12 +14,10 @@ var streetmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}
 
 var URL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson"
 
-// Grabbing geoJSON data
+// geoJSON data
 d3.json(URL, function (data) {
     var earthquakes = data.features;
-    //console.log(earthquakes);
-
-    //Changing color based on 3rd coordinate 
+  
 
     function getColor(depth) {
         if (depth >= -10 && depth < 10) {
@@ -42,7 +40,7 @@ d3.json(URL, function (data) {
         }
       };
 
-    // Setting up variables from geoJSON
+    // Add variables
 
     for (var i = 0; i < earthquakes.length; i++) {
         var latitude = earthquakes[i].geometry.coordinates[1];
@@ -50,7 +48,7 @@ d3.json(URL, function (data) {
         var magnitude = earthquakes[i].properties.mag;
         var depth = earthquakes[i].geometry.coordinates[2];
 
-        // Setting up markers
+        // Add Markers
         var earthquakeMarker = L.circleMarker([latitude, longitude], {
             radius: magnitude * 5,
             color: "black",

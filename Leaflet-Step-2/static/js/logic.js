@@ -76,20 +76,19 @@ d3.json(tectonicUrl, function(tectonicData) {
 			coordinates.map(coordinate => [coordinate[1], coordinate[0]])
 		);
 
-		// Create tectonic lines
+		// Tectonic lines
 		var lines = L.polyline(coordinateList, {color: "rgb(255, 165, 0)"});
 		
-		// Add the new marker to the appropriate layer
+		// Tectonic mark
 		lines.addTo(layers.tectonicLayer);
 	};
 });
 
-// Grabbing geoJSON data
+//JSON data
 d3.json(earthquakeUrl, function (data) {
   var earthquakes = data.features;
 
-
-  //Changing color based on 3rd coordinate 
+ 
 
   function getColor(depth) {
       if (depth >= -10 && depth < 10) {
@@ -112,7 +111,7 @@ d3.json(earthquakeUrl, function (data) {
       }
     };
 
-  // Setting up variables from geoJSON
+  // Add variables
 
   for (var i = 0; i < earthquakes.length; i++) {
       var latitude = earthquakes[i].geometry.coordinates[1];
@@ -120,7 +119,7 @@ d3.json(earthquakeUrl, function (data) {
       var magnitude = earthquakes[i].properties.mag;
       var depth = earthquakes[i].geometry.coordinates[2];
 
-      // Setting up markers
+      // Add markers
       var earthquakeMarker = L.circleMarker([latitude, longitude], {
           radius: magnitude * 5,
           color: "black",
@@ -136,7 +135,7 @@ d3.json(earthquakeUrl, function (data) {
           "<br>Location: " + earthquakes[i].properties.place + "</h4><br>");
   };
   
-  // Setting the legend to appear in the bottom right of map
+  //legend
   var legend = L.control({ position: 'bottomright'
   });
   
