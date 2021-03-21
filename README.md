@@ -7,6 +7,7 @@ There were two datasets I implemented in this assignment. The first was a datase
 Once the data was implemented correctly, I was able to plot it on my map through Leaflet Javascript, which visualized where earthquakes could occur. I was also able to build in the interactive aspect of the data map allowing users to define their own settings for viewing the data. 
 
 You can view my work here:
+
 https://amelchristy.github.io/Leaflet/Leaflet-Step-1/
 
 https://amelchristy.github.io/Leaflet/Leaflet-Step-2/
