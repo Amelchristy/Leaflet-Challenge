@@ -1,4 +1,5 @@
-# Leaflet-Challenge
+# USGS - Earthquakes Visualization 
+#Leaflet-Challenge
 
 I completed this project during my Data Analysis and Visualization Bootcamp at the University of Pennsylvania. The purpose of the assignment was to learn how to implement plot data and visualization using Javascript. To learn this skill effectively, I visualized data sets to create a map displaying where earthquakes had occurred in the United States.   
 
